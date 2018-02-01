@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body>
+	<div id="wrapper">
+		
+		<div id="banner">
+			<h1 class="rubrik">Spel</h1>
+		<form id="searchBar">	
+			<input type="search" placeholder="Sök efter spel...">
+		</form>	
+		</div>
+
+		<div id="spel-lista">
+			<p class="rubrik">Lista av favorit spel</p>
+			<ul>
+				<li>
+					<span class="titel">Metal gear solid V</span>
+					<span class="radera">Radera</span>
+				</li>
+				<li>
+					<span class="titel">The witcher 3</span>
+					<span class="radera">Radera</span>
+				</li>
+				<li>
+					<span class="titel">Watchdogs 2</span>
+					<span class="radera">Radera</span>
+				</li>
+				<li>
+					<span class="titel">grand theft auto 5</span>
+					<span class="radera">Radera</span>
+				</li>
+			</ul>
+		</div>	
+
+	<div id="laegtill-och-filtrera-container">
+		<form id ="laegtill-och-filtrera"> 
+			<label for="check">visa/göm
+				<input type="checkbox" id="check">
+			</label>
+			<input type="search" name="searchNamn" placeholder="Lägg till spel">
+			<button>Lägg till</button>
+		</form>
+	</div>
+
+    <div id="tabbed-container">
+        <ul class="tabs">
+          <li data-target="#om-oss" class="aktiv">Om oss</li>
+          <li data-target="#kontakt-info">Kontakt info</li>
+        </ul>
+        <div class="panel aktiv" id="om-oss">
+          <p>Om oss ..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="panel" id="kontakt-info">
+          <p>Kontakt information..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+    </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  window.onload = function(){
+
+//animation
+$("#spel-lista ul li").on("mouseenter", function(){
+	$(this).animate({"top": "-10px"});
+});
+
+$("#spel-lista ul li").on("mouseout", function(){
+	$(this).animate({"top": "10px"});
+});
+//radera
+	var spelLista = document.getElementById("spel-lista");
+	spelLista.addEventListener("click" , raderaSpel);
+	
+	function raderaSpel(e){
+		if(e.target.nodeName === "SPAN" && e.target.className === "radera"){
+			var target = e.target.parentElement
+         $(target).hide(1000);	
+		}
+	}
+
+//Lägg till spel
+	var laegTillForm = document.forms["laegtill-och-filtrera"];
+	laegTillForm.addEventListener("submit" , laegTill);
+
+	function laegTill(e){
+		e.preventDefault();
+		var inputFaelt = laegTillForm.querySelector("input[type='search']");
+		if(inputFaelt.value === ""){
+			alert("du måste ange en titel");
+		}
+		else{
+			var li = document.createElement("li");
+			var spanTitel = document.createElement("span");
+			spanTitel.className="titel";
+			spanTitel.textContent= inputFaelt.value;
+
+			var spanRadera = document.createElement("span");
+			spanRadera.className="radera";
+			spanRadera.textContent="radera";
+
+			li.appendChild(spanTitel);
+			li.appendChild(spanRadera);
+			document.querySelector("#spel-lista ul").appendChild(li);
+		}
+	}
+
+  //sök efter spel
+	var sokForm = document.forms["searchBar"];
+    var soekRuta = sokForm.querySelector("input[type='search']");
+
+	soekRuta.addEventListener("keyup",function(){
+	  	var inputVaerde = this.value.toLowerCase();
+	  	var spelListaTitlar = document.querySelectorAll("#spel-lista ul li");
+	
+	  	spelListaTitlar.forEach(function(spelTitel){
+		  	var titel = spelTitel.querySelector("span[class='titel']").textContent;
+		  	if(titel.toLowerCase().indexOf(inputVaerde) === -1){
+		  		spelTitel.style.display = "none";
+		  	}
+		  	else
+		  	{
+		  		spelTitel.style.display = "block";
+		  	}		
+	  	});
+    });
+
+	//visa göm(checkbox)
+	var filtrera = document.forms["laegtill-och-filtrera"].querySelector("input[type='checkbox']");
+	var lista = document.getElementById("spel-lista");
+	
+	filtrera.addEventListener("change",function(){
+		if(filtrera.checked){
+	  		lista.style.display = "none";
+	  	}
+	    else{
+	  		lista.style.display = "block";
+	    }
+	});
+
+	//tabbar
+	var tabbar = document.querySelector("#tabbed-container .tabs");
+	var paneler = document.querySelectorAll("#tabbed-container div.panel");
+
+	tabbar.addEventListener("click" , function(e)
+	{
+		if(e.target.nodeName === "LI")
+		{
+			var klickadPanel = document.querySelector(e.target.dataset.target);
+
+				paneler.forEach(function(panel)
+			{
+				console.log(panel);
+				if(panel == klickadPanel)
+				{
+					panel.classList.add("aktiv");
+				}else
+				{
+					panel.classList.remove("aktiv");
+				}
+			});	
+		}
+	});
+
+
+ };
+
+</script>
+
+</body>
+</html>
+
