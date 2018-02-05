@@ -1,32 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
-body
-{
-	margin:0;
-	padding:0;
+body{
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
-#wrapper
-{
+#wrapper{
 	width: 80%;
 	border: 3px solid #bfbfbf;
 	border-radius: 10px;
 	background-color: white;
 	margin: 1% auto;
 }
-#banner
-{		
+#banner{		
 	text-align: center;
 	background-color: #BDBDBD;
 }
-.rubrik
-{
+.rubrik{
 	font-family: 'Libre Baskerville', sans-serif;
 	font-weight: bold;
 	color: #595959;
 	margin: 0;
 }
-#banner input
-{
+#banner input{
 	margin: 25px 0;
 	width: 25%;
 	height: 30px;
@@ -35,48 +30,40 @@ body
 	font-weight: normal;
 	font-size: 15px;
 }
-#banner input[type="search"]::-webkit-input-placeholder { 
+#banner input[type="search"]::-webkit-input-placeholder{ 
   color: #007399;
 }
-#banner input:hover
-{
+#banner input:hover{
 	border: 2px solid #999999;
 }
-#spel-lista
-{
+#spel-lista{
 	background-color: white;
 	margin-top: 40px;
 }
-#spel-lista
-{
+#spel-lista{
 	text-align: center;
 	font-size: 1.5em;
 }
-#spel-lista ul
-{
+#spel-lista ul{
 	list-style-type: none;
 }
-#spel-lista ul li
-{
+#spel-lista ul li{
 	background-color: #607D8B;
 	margin: 20px auto;
 	padding: 2% 0;
 	width: 50%;
 	text-align: left;
-	position:relative;
+	position: relative;
 
 }
-#spel-lista ul li span.titel
-{
+#spel-lista ul li span.titel{
 	font-family: 'Libre Baskerville', sans-serif;
 	font-weight: normal;
 	font-size: 1.2em;
 	margin-left: 5%;
 	color: white;
-
 }
-#spel-lista ul li span.radera
-{
+#spel-lista ul li span.radera{
 	background-color: #F44336;
 	padding: 2%;
 	border-radius: 5px;
@@ -85,24 +72,19 @@ body
 	position: absolute;
 	right: 5%;
 }
-#spel-lista ul li span.radera:hover
-{
+#spel-lista ul li span.radera:hover{
  	background-color: #EF5350;	
 }
-#laegtill-och-filtrera-container
-{
+#laegtill-och-filtrera-container{
 	width: 60%;
 	margin: 3% auto;
 	text-align: center;
 }
-
-#laegtill-och-filtrera label
-{
+#laegtill-och-filtrera label{
 	font-family: 'Libre Baskerville', sans-serif;
 }
 
-#laegtill-och-filtrera input[type="search"]
-{
+#laegtill-och-filtrera input[type="search"]{
 	width: 30%;
 	height: 40px;
 	border: 2px solid #bfbfbf;
@@ -110,11 +92,10 @@ body
 	font-weight: normal;
 	font-size: 15px;
 }
-#laegtill-och-filtrera input[type="search"]::-webkit-input-placeholder { 
+#laegtill-och-filtrera input[type="search"]::-webkit-input-placeholder{ 
   color: #007399;
 }
-#laegtill-och-filtrera button
-{
+#laegtill-och-filtrera button{
 	background-color: #607D8B;
 	padding: 11px;
 	border: 1px solid #607D8B;
@@ -122,43 +103,35 @@ body
 	color: white;
 	font-family: 'Libre Baskerville', sans-serif;
 }
-#laegtill-och-filtrera button:hover
-{
+#laegtill-och-filtrera button:hover{
 	background-color: #78909C;
 	border: 1px solid #78909C;
 }
-#tabbed-container
-{
+#tabbed-container{
 	text-align: center;
 }
-#tabbed-container .tabs li
-{
+#tabbed-container .tabs li{
 	list-style-type: none;
 	display: inline-block;
 	background-color: #90A4AE;
 	border-radius: 2px;
 	font-size: 19px;
 	padding: 7px;
-	margin:5px 2px;
+	margin: 5px 2px;
 	color: white;
 }
-#tabbed-container .tabs li.aktiv
-{
-
+#tabbed-container .tabs li.aktiv{
 	background-color: #607D8B;
 
 }
-#tabbed-container .tabs li:hover
-{
+#tabbed-container .tabs li:hover{
 	background-color: #263238;
 }
 
-#tabbed-container div.panel
-{
+#tabbed-container div.panel{
 	display: none;
 }
-#tabbed-container div.aktiv 
-{
+#tabbed-container div.aktiv {
 	display: block;
 	margin: 5px auto;
 	font-family: 'Libre Baskerville', sans-serif;
@@ -167,23 +140,18 @@ body
 }
 /*laptop*/
 @media (max-width: 1110px){
-
-	#wrapper
-{
+#wrapper{
 	width: 90%;
 	margin: 1% auto;
 }
-#searchBar input[type="search"]
-{
+#searchBar input[type="search"]{
 	width: 40%;
 }
-#spel-lista ul li
-{
+#spel-lista ul li{
 	width: 70%;
 	margin: 10px auto;
 }
-#laegtill-och-filtrera-container 
-{
+#laegtill-och-filtrera-container {
 	width: 100%;
 }
 #laegtill-och-filtrera label{
@@ -195,8 +163,7 @@ body
 	margin: 0;
 	display: inline-block;
 }
-#laegtill-och-filtrera button
-{
+#laegtill-och-filtrera button{
 	display: inline-block;
 	width: 15%;
 }
@@ -209,17 +176,14 @@ body
 	margin: 0;
 	border-radius: 0;
 }
-#searchBar input[type="search"]
-{
+#searchBar input[type="search"]{
 	width: 50%;
 }
-#spel-lista ul li
-{
+#spel-lista ul li{
 	width: 80%;
 	margin: 10px auto;
 }
-#laegtill-och-filtrera-container 
-{
+#laegtill-och-filtrera-container{
 	width: 100%;
 }
 #laegtill-och-filtrera label{
@@ -231,49 +195,41 @@ body
 	margin: 0;
 	display: inline-block;
 }
-#laegtill-och-filtrera button
-{
+#laegtill-och-filtrera button{
 	display: inline-block;
 	width: 15%;
 }
-#tabbed-container div.aktiv 
-{
+#tabbed-container div.aktiv{
 	width: 100%;
 }
 }
 /*Mobil*/
 @media (max-width: 480px){
-#wrapper
-{
+#wrapper{
 	width: 100%;
 	margin: 0;
 	border-radius: 0;
 }	
-#searchBar input[type="search"]
-{
+#searchBar input[type="search"]{
 	width: 85%;
 }
-#spel-lista ul
-{
+#spel-lista ul{
 	padding: 0;
 }
-#spel-lista ul li
-{
+#spel-lista ul li{
 	width: 96%;
 	margin: 10px 2%;
 }
-#spel-lista ul li span.titel
-{
+#spel-lista ul li span.titel{
 	display: inline-block;
 	width: 75%;
 	font-size: 0.8em;
 	margin: 0;
 	padding-left: 1px;
 }
-#spel-lista ul li span.radera
-{
+#spel-lista ul li span.radera{
 	display: inline-block;
-	right:0;
+	right: 0;
 	top: 0;
 	height: 100%;
 	width: 25%;
@@ -285,8 +241,7 @@ body
 	text-decoration: underline white;
 	line-height: 40px; 
 }
-#laegtill-och-filtrera-container 
-{
+#laegtill-och-filtrera-container{
 	width: 100%;
 }
 #laegtill-och-filtrera label{
@@ -299,13 +254,11 @@ body
 	margin: 0;
 	display: inline-block;
 }
-#laegtill-och-filtrera button
-{
+#laegtill-och-filtrera button{
 	display: inline-block;
 	width: 30%;
 }
-#tabbed-container div.aktiv 
-{
+#tabbed-container div.aktiv {
 	width: 100%;
 }
 }
